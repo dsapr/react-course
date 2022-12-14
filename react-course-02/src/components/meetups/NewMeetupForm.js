@@ -2,29 +2,33 @@ import Card from '../ui/Card'
 import classes from './NewMeetupForm.module.css'
 
 function NewMeetupForm() {
+  function submitHandler (event) {
+    event.preventDefault();
+  }
+
   return (
     <Card>
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
-          <lable htmlFor="title">Meetup Title</lable>
-          <input type="text" required id="title" />
+          <label htmlFor="title">Meetup Title</label>
+          <input type="text" required id="title" onChange />
         </div>
         <div className={classes.control}>
-          <lable htmlFor="image">Meetup Image</lable>
+          <label htmlFor="image">Meetup Image</label>
           <input type="url" required id="image" />
         </div>
         <div className={classes.control}>
-          <lable htmlFor="address">Address</lable>
+          <label htmlFor="address">Address</label>
           <input type="text" required id="address" />
         </div>
+        <div className={classes.control}>
+          <label htmlFor="description">Description</label>
+          <textarea id="description" required rows="5"></textarea>
+        </div>
+        <div className={classes.actions}>
+          <button>Add Meetup</button>
+        </div>
       </form>
-      <div className={classes.control}>
-        <lable htmlFor="description">Description</lable>
-        <textarea id="description" required rows="5"></textarea>
-      </div>
-      <div className={classes.actions}>
-        <button>Add Meetup</button>
-      </div>
     </Card>
   )
 }
