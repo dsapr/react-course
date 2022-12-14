@@ -1,7 +1,7 @@
 import Card from '../ui/Card'
 import classes from './MeetupItem.moudule.css'
 
-function MeetupItem(props) {
+function MeetupItem (props) {
   return (
     <li className={classes.item}>
       <Card>
