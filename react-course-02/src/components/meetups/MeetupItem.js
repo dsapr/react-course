@@ -9,10 +9,11 @@ function MeetupItem(props) {
 
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id)
 
-  function toggleFavoriteStatusHandler() {
+  function toggleFavoriteStatusHandler () {
+    // 如果已收藏则移除
     if (itemIsFavorite) {
       favoritesCtx.removeFavorite(props.id)
-    } else {
+    } else { // 不存在则收藏
       favoritesCtx.addFavorite({
         id: props.id,
         title: props.title,
